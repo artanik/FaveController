@@ -1,0 +1,324 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Fave Controller</title>
+        <link rel="stylesheet" href="css/main.min.css">
+    </head>
+    <body class="page-dashboard">
+        <div class="loader-wrapper" style="display: none;">
+            <div class="loader">
+                <div class="title">Fave Controller</div>
+                <div class="sub-title__loader hide">
+                    <div class="loader-posts">Загружено записей: <span>0</span>%</div>
+                    <div class="loader-photos">Загружено фотографий: <span>0</span>%</div>
+                    <div class="loader-videos">Загружено видеозаписей: <span>0</span>%</div>
+                </div>
+                <div class="spinner">
+                  <div class="bounce1"></div>
+                  <div class="bounce2"></div>
+                  <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <div class="header clearfix">
+                <div class="logo pull-left">Fave Controller</div>
+                <ul class="nav pull-right">
+                    <li class="about">О программе</li>
+                    <li class="logout">Выйти</li>
+                </ul>
+            </div>
+            
+            <div class="dashboard">
+                <div class="sidebar">
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input type="text" id="search" placeholder="Поиск">
+                    </div>
+                    <div class="sub-tabs clearfix">
+                        <div data-tab="posts" class="active">
+                            <div class="sub-tabs-container">
+                                <div class="btn active" data-sub-tab="all">
+                                    <i class="fa fa-newspaper-o"></i> Всё <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="stack">
+                                    <i class="fa fa-columns"></i> Стек <span class="count"></span>
+                                </div>
+                                <div class="btn hide" data-sub-tab="stack-search">
+                                    <i class="fa fa-search"></i> Поиск по стеку
+                                    <i class="fa fa-times tab-close"></i>
+                                </div>
+                                <div class="btn hide" data-sub-tab="keyword-search">
+                                    <i class="fa fa-search"></i> Поиск по слову <span class="count"></span>
+                                    <i class="fa fa-times tab-close"></i>
+                                </div>
+                                <div class="btn hide" data-sub-tab="date-search">
+                                    <i class="fa fa-search"></i> Поиск по дате <span class="count"></span>
+                                    <i class="fa fa-times tab-close"></i>
+                                </div>
+                                <div class="separator"></div>
+                                <div class="btn reverse"><i class="fa fa-sort-amount-asc"></i><i class="fa fa-sort-amount-desc hide"></i> Реверс</div>
+                                <div class="btn refresh"><i class="fa fa-refresh"></i> Обновить</div>
+                                <div class="btn datepicker"><i class="fa fa-calendar"></i> Дата</div>
+                                <div class="container-date">
+                                    <div class="datepicker-item">От: <input type="text" id="datepicker-from" placeholder="ММ/ДД/ГГ"></div>
+                                    <div class="datepicker-item">До: <input type="text" id="datepicker-to" placeholder="ММ/ДД/ГГ"></div>
+                                    <button id="search-date" class="btn pull-right">Поиск</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab="media">
+                            <div class="sub-tabs-container">
+                                <div class="btn active" data-sub-tab="audio">
+                                    <i class="fa fa-music"></i> Музыка <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="photo">
+                                    <i class="fa fa-picture-o"></i> Фото <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="video">
+                                    <i class="fa fa-film"></i> Видео <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="doc">
+                                    <i class="fa fa-archive"></i> Документы <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="note">
+                                    <i class="fa fa-file-text-o"></i> Заметки <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="graffiti">
+                                    <i class="fa fa-file-image-o"></i> Граффити <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="link">
+                                    <i class="fa fa-link"></i> Ссылки <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="poll">
+                                    <i class="fa fa-bar-chart"></i> Опросы <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="geo">
+                                    <i class="fa fa-map-marker"></i> Места <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="page">
+                                    <i class="fa fa-pencil"></i> Страницы <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="album">
+                                    <i class="fa fa-picture-o"></i> Альбомы <span class="count"></span>
+                                </div>
+                            </div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div data-tab="source">
+                            <div class="sub-tabs-container">
+                                <div class="btn active" data-sub-tab="instagram">
+                                    <i class="fa fa-instagram"></i> Instagram <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="iphone">
+                                    <i class="fa fa-apple"></i> Iphone <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="android">
+                                    <i class="fa fa-android"></i> Android <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="wphone">
+                                    <i class="fa fa-windows"></i> Windows Phone <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="vk">
+                                    <i class="fa fa-vk"></i> VK <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="widget">
+                                    <i class="fa fa-cubes"></i> Widget <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="api">
+                                    <i class="fa fa-sitemap"></i> API <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="rss">
+                                    <i class="fa fa-rss"></i> RSS <span class="count"></span>
+                                </div>
+                                <div class="btn" data-sub-tab="sms">
+                                    <i class="fa fa-mobile"></i> SMS <span class="count"></span>
+                                </div>
+                            </div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div data-tab="peoples">
+                            <div class="pull-left"></div>
+                            <div class="pull-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tabs">
+                        <ul>
+                            <li data-tab="posts" class="active"><span>Записи</span></li>
+                            <li data-tab="media"><span>Медиа</span></li>
+                            <li data-tab="source"><span>Ресурсы</span></li>
+                        </ul>
+                    </div>
+                    <div class="tabs-container">
+                        <div class="tab active" id="posts">
+                            <div class="sub-tab active" id="all"></div>
+                            <div class="sub-tab" id="stack">
+                                <div class="stack-table">
+                                    <div class="stack-cell" id="stack-group"></div>
+                                    <div class="stack-cell" id="stack-profiles"></div>
+                                </div>
+                            </div>
+                            <div class="sub-tab" id="stack-search"></div>
+                            <div class="sub-tab" id="keyword-search"></div>
+                            <div class="sub-tab" id="date-search"></div>
+                        </div>
+                        <div class="tab" id="media">
+                            <div class="sub-tab active" id="audio"></div>
+                            <div class="sub-tab" id="photo"></div>
+                            <div class="sub-tab" id="video"></div>
+                            <div class="sub-tab" id="doc"></div>
+                            <div class="sub-tab" id="note"></div>
+                            <div class="sub-tab" id="graffiti"></div>
+                            <div class="sub-tab" id="link"></div>
+                            <div class="sub-tab" id="poll"></div>
+                            <div class="sub-tab" id="geo"></div>
+                            <div class="sub-tab" id="page"></div>
+                            <div class="sub-tab" id="album"></div>
+                        </div>
+                        <div class="tab" id="source">
+                            <div class="sub-tab active" id="instagram"></div>
+                            <div class="sub-tab" id="iphone"></div>
+                            <div class="sub-tab" id="android"></div>
+                            <div class="sub-tab" id="wphone"></div>
+                            <div class="sub-tab" id="vk"></div>
+                            <div class="sub-tab" id="widget"></div>
+                            <div class="sub-tab" id="api"></div>
+                            <div class="sub-tab" id="rss"></div>
+                            <div class="sub-tab" id="sms"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="hide">
+                <div class="tabs">
+                    <ul>
+                        <li class="about-back"><span><i class="fa fa-angle-left"></i> Назад</span></li>
+                    </ul>
+                </div>
+                <div class="about-wrapper">
+                    <h2>Фильтры для поиска</h2>
+                    <p>Пример: <code>ext: pdf</code>, <code>audio: Arctic Monkeys</code>.</p>
+                    <ul>
+                        <li><strong>ext:</strong> - поиск по расширениям файлов</li>
+                        <li><strong>doc:</strong> - поиск по названиям файлов</li>
+                        <li><strong>note:</strong> - поиск по названиям заметок</li>
+                        <li><strong>page:</strong> - поиск по названиям страниц</li>
+                        <li><strong>audio:</strong> - поиск по аудиофайлам</li>
+                        <li><strong>video:</strong> - поиск по видеозаписям</li>
+                        <li><strong>link:</strong> - поиск по ссылках</li>
+                        <li><strong>poll:</strong> - поиск по опросах</li>
+                        <li><strong>geo:</strong> - поиск по названям гео-позиции</li>
+                    </ul>
+
+                    <p>Если фильтр не указан, то поиск осуществляется по всем фильтрам.</p>
+
+
+                    <strong>Автор:</strong> <a href="https://artanik.github.io/" target="_blank">Артём Аникеев</a><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal captcha hide">
+            <div class="modal-bg"></div>
+            <div class="modal-window">
+                <div class="modal-title">Введите код</div>
+                <div class="modal-content">
+                    <div id="captcha-img">
+                        <img src="http://api.vk.com/captcha.php?sid=239633676097&s=1">
+                    </div>
+                    <input type="text" id="captcha" placeholder="Код">
+                </div>
+                <div class="modal-footer">
+                    <div class="btn pull-right" id="captcha-send">Отправить</div>
+                </div>
+            </div>
+        </div>
+
+        <script id="stack-template" type="text/x-handlebars-template">
+        <div class="stack-item" data-id="{{id}}">
+            <img src="{{img}}" alt="">
+            <div class="stack-item--name">{{name}}</div>
+            <span><i class="fa fa-heart"></i> {{count}}</span>
+        </div>
+        </script>
+
+        <script id="video-template" type="text/x-handlebars-template">
+        <div class="fave-video-item" data-id="{{id}}">
+            <a href="{{link}}" target="_blank" class="fave-video-inner" style="background-image: url({{photo_url}});">
+                <span class="fave-video-title">{{title}}</span>
+                <span class="fave-video-duration">{{duration}}</span>
+                <span class="fave-video-like" data-from-id="{{from_id}}" data-owner-id="{{owner_id}}" data-id="{{id}}">
+                {{#if isLike}}
+                    <i class="fa fa-heart"></i><i class="fa fa-heart-o hide"></i>
+                {{else}}
+                    <i class="fa fa-heart hide"></i><i class="fa fa-heart-o"></i>
+                </span>
+                {{/if}}
+                </span>
+            </a>
+        </div>
+        </script>
+
+        <script id="photo-template" type="text/x-handlebars-template">
+        <div class="fave-photo-item" data-id="{{id}}">
+            <a href="{{link}}" target="_blank" class="fave-photo-inner" style="background-image: url({{photo_url}});"></a>
+                <span class="fave-photo-like" data-from-id="{{from_id}}" data-owner-id="{{owner_id}}" data-id="{{id}}">
+                {{#if isLike}}
+                    <i class="fa fa-heart"></i><i class="fa fa-heart-o hide"></i>
+                {{else}}
+                    <i class="fa fa-heart hide"></i><i class="fa fa-heart-o"></i>
+                </span>
+                {{/if}}
+        </div>
+        </script>
+
+        <script id="post-template" type="text/x-handlebars-template">
+        <div class="post">
+            <div class="post-header">
+                <div class="post-id pull-right">#{{index}}</div>
+                <div class="post-from">
+                    <img src="{{owner_img}}" alt="">
+                    {{owner_name}}
+                    <span>{{date}}</span>
+                </div>
+            </div>
+            {{#if text}}<div class="post-text">{{text}}</div>{{/if}}
+            {{#if copy}}
+                <div class="post-owner">
+                    <img src="{{copy_owner_img}}" alt="">
+                    <i class="fa fa-retweet"></i> {{copy_owner_name}}
+                    <span>{{copy_date}}</span>
+                </div>
+                {{#if copy_text}}<div class="post-text">{{copy_text}}</div>{{/if}}
+                <div class="post-attachments">{{copy_attachments}}</div>
+            {{else}}
+                <div class="post-attachments">{{attachments}}</div>
+            {{/if}}
+            <div class="post-footer">
+                <div class="pull-right post-info">
+                    <span class="like" data-from-id="{{from_id}}" data-owner-id="{{owner_id}}" data-id="{{id}}">
+                    {{#if isLike}}
+                        <i class="fa fa-heart"></i><i class="fa fa-heart-o hide"></i>
+                    {{else}}
+                        <i class="fa fa-heart hide"></i><i class="fa fa-heart-o"></i>
+                    </span>
+                    {{/if}}
+                    <span class="like-num">{{likes}}</span></span>
+                    <i class="fa fa-retweet"></i> {{reposts}}
+                    <i class="fa fa-comment"></i> {{comments}}
+                </div>
+                <a href="{{original_url}}" target="_blank"><i class="fa fa-external-link"></i> Открыть в браузере</a>
+            </div>
+        </div>
+        </script>
+
+        <script src="js/main.min.js"></script>
+    </body>
+</html>

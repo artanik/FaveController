@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fave Controller</title>
+        <link rel="stylesheet" href="css/main.min.css">
+    </head>
+    <body class="page-login">
+
+        <div class="loader-wrapper">
+            <div class="loader">
+                <div class="title">Fave Controller</div>
+                <div class="sub-title__loader hide">
+                    <div class="loader-posts">Загружено записей: <span>0</span>%</div>
+                    <div class="loader-photos">Загружено фотографий: <span>0</span>%</div>
+                    <div class="loader-videos">Загружено видеозаписей: <span>0</span>%</div>
+                </div>
+                <div class="spinner">
+                  <div class="bounce1"></div>
+                  <div class="bounce2"></div>
+                  <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper" style="display: none;">
+            <div class="left-side">
+                <div class="title">Fave Controller</div>
+                <div class="content">
+                    <div class="feature-item">
+                        <strong>Что это?</strong>
+                        Fave Controller — приложение для работы с закладками в социальной сети Вконтакте.
+                    </div>
+                    
+                    <div class="feature-item">
+                        <strong>Что умеет?</strong>
+                        <ul class="check-list">
+                            <li>
+                                Фильтровать записи по типам.
+                                <em>Музыка, Фото, Видео, Документы, Заметки, Граффити, Ссылки, Опросы, Места, Страницы, Альбомы</em>
+                            </li>
+                            <li>
+                                Фильтровать записи по источникам.
+                                <em>Instagram, Iphone, Android, Windows Phone, VK, Widget, API, RSS, SMS</em>
+                            </li>
+                            <li>Искать записи по ключевому слову.</li>
+                            <li>Фильтровать записи по дате.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <strong>Что-то ещё?</strong>
+                        Приложение кроссплатформенное, доступно для Windows, OS X и Linux.
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="singup-btn"><i class="fa fa-vk"></i> Авторизоаться</div>
+                <div class="version"></div>
+            </div>
+        </div>
+
+        <div id="webview-wrapper">
+            <webview id="webview" src="" style="width: 100%;height: 100%;"></webview>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
