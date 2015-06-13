@@ -2,7 +2,7 @@ var module = {};
 var VKFC = {};
 
 VKFC.config = {
-    appId: 4882405,
-    appKey: 'yhcrxezmQ5N4GrnHXcGt',
+    appId: 0000000,
+    appKey: '',
     scope: 'offline,friends,wall'
 };
